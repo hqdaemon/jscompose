@@ -1,5 +1,7 @@
 # JSCompose
-Compose JavaScript Files Into One Bundle
+Compose Your JavaScript Files Into **One Bundle** Including Required Files
+
+<br/>
 
 ## Installation [Node.js](http://nodejs.org/):
 ```
@@ -7,11 +9,19 @@ npm install @hqdaemon/jscompose
 ```
 
 ## Usage
+Just Add in the main JavaScript file **require()**.
+
+In main.js (or other file)
+``` javascript
+require("path_to_other_js_file/file.js");
+```
+
+...then compose it with **Node.js** and **jscompose**
 ``` javascript
 const jscompose = require("@hqdaemon/jscompose");
 let result = jscompose("/path_to_file/file.js");
 
-// Return false or string
+// Return false or composed string
 ```
 
 <br />
