@@ -1,0 +1,27 @@
+{
+  "name": "jscompose",
+  "version": "1.0.0",
+  "description": "Compose JavaScript Files Into One Bundle",
+  "main": "jscompose.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hqdaemon/jscompose.git"
+  },
+  "keywords": [
+    "js",
+    "compose",
+    "require"
+  ],
+  "author": {
+    "name": "HQ",
+    "url": "https://hqmode.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hqdaemon/jscompose/issues"
+  },
+  "homepage": "https://github.com/hqdaemon/jscompose#readme"
+}
