@@ -35,7 +35,7 @@
 		return jsStr;
 	};
 
-	jscompose._message = (err) => {
+	jscompose._error = (err) => {
 		if(this.options.test){
 			throw new Error(_error);
 		}
