@@ -36,7 +36,7 @@
 	};
 
 	jscompose._error = (err) => {
-		if(this.options.test){
+		if(process.env.test !== undefined && process.env.test !== null){
 			throw new Error(_error);
 		}
 		return false;
