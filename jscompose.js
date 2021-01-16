@@ -3,17 +3,16 @@
 	var jscompose = function(path,options){
 		this.options = options || {};
 		if(path === undefined || path === null){
-			return this._message(true,"The path is not specified");
+			return this._error("The path is not specified");
 		}
 
 		if(!fs.existsSync(path)){
-			return this._message(true,"File Not Found");
+			return this._error(`File ${path} Not Found`);
 		}
 
 		let jsFile = fs.readFileSync(path);
 		if(!jsFile){
-			return this._message(true,"Can't Read The File");
-			return false;
+			return this._error("Can't Read The File");
 		}
 
 		let jsStr = jsFile.toString();
@@ -33,17 +32,15 @@
 			}
 		}
 
-		this._message = (err,result) => {
-			if(err){
-				if(this.options.test){
-					throw new Error(result);
-				}
-				return false;
-			}
-			return result;
-		};
-
 		return jsStr;
 	};
+
+	jscompose._message = (err) => {
+		if(this.options.test){
+			throw new Error(_error);
+		}
+		return false;
+	};
+
 	module.exports = jscompose;
 })();

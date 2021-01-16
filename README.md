@@ -11,7 +11,7 @@ npm install @hqdaemon/jscompose
 ## Usage
 Just Add in the main JavaScript file **require()**.
 
-In main.js (or other file)
+In app.js (or other file)
 ``` javascript
 require("path_to_other_js_file/file.js");
 ```
@@ -19,7 +19,7 @@ require("path_to_other_js_file/file.js");
 ...then compose it with **Node.js** and **jscompose**
 ``` javascript
 const jscompose = require("@hqdaemon/jscompose");
-let result = jscompose("/path_to_file/main.js");
+let result = jscompose("/path_to_file/app.js");
 
 // Return false or composed string
 ```
