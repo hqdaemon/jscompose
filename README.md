@@ -19,7 +19,7 @@ require("path_to_other_js_file/file.js");
 ...then compose it with **Node.js** and **jscompose**
 ``` javascript
 const jscompose = require("@hqdaemon/jscompose");
-let result = jscompose("/path_to_file/file.js");
+let result = jscompose("/path_to_file/main.js");
 
 // Return false or composed string
 ```
