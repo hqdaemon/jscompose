@@ -1,5 +1,5 @@
 # JSCompose
-Compose Your JavaScript Files Into **One Bundle** Including Required Files
+Compose Your JavaScript Files Into **One Bundle** Including Required or Imported Files
 
 <br/>
 
@@ -9,11 +9,13 @@ npm install @hqdaemon/jscompose
 ```
 
 ## Usage
-Just add in the main JavaScript file other files with **require()** method.
+Just add in the main JavaScript file other files with **require()** or import method.
 
 In app.js (or other file)
 ```js
-require("path_to_other_js_file/file.js");
+require("path_to_other_js_file/file.1.js");
+import "path_to_other_js_file/file.2.js";
+require("path_to_other_js_file/file.3");
 ```
 
 ...then compose it with **Node.js** and **jscompose**

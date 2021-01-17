@@ -17,10 +17,10 @@
 		let jsStr = jsFile.toString();
 
 		let dir = path.replace(/([^/]+)\.js$/,"");
-		let match = jsStr.matchAll(/require\(\"([^"]+)\"\)\;\n?/g);
+		let match = jsStr.matchAll(/require\(\"([^"]+)\"\)\;\n?|import \"([^"]+)\";\n?/g);
 		for(let i of match){
 			jsStr = jsStr.replace(i[0],"");
-			let file = i[1];
+			let file = i[1] || i[2];
 			if(!file.match(/\.js$/)){
 				file += ".js";
 			}
