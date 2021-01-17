@@ -1,5 +1,5 @@
 # JSCompose
-Compose Your JavaScript Files Into **One Bundle** Including Required or Imported Files
+Compose Your JavaScript Files Into One Bundle Including Required or Imported Files
 
 <br/>
 
