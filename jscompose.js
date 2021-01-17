@@ -1,18 +1,17 @@
 (() => {
 	const fs = require("fs");
-	var jscompose = function(path,options){
-		this.options = options || {};
+	var jscompose = function(path){
 		if(path === undefined || path === null){
-			return this._error("The path is not specified");
+			return jscompose._error("The path is not specified");
 		}
 
 		if(!fs.existsSync(path)){
-			return this._error(`File ${path} Not Found`);
+			return jscompose._error(`File ${path} Not Found`);
 		}
 
 		let jsFile = fs.readFileSync(path);
 		if(!jsFile){
-			return this._error("Can't Read The File");
+			return jscompose._error("Can't Read The File");
 		}
 
 		let jsStr = jsFile.toString();
@@ -37,7 +36,7 @@
 
 	jscompose._error = (err) => {
 		if(process.env.test !== undefined && process.env.test !== null){
-			throw new Error(_error);
+			throw new Error(err);
 		}
 		return false;
 	};
