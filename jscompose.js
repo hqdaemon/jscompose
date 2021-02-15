@@ -19,16 +19,17 @@
 		let dir = path.replace(/([^/]+)\.js$/,"");
 		let match = jsStr.matchAll(/require\(\"([^"]+)\"\)\;\n?|import \"([^"]+)\";\n?/g);
 		for(let i of match){
-			jsStr = jsStr.replace(i[0],"");
 			let file = i[1] || i[2];
 			if(!file.match(/\.js$/)){
 				file += ".js";
 			}
+			let code;
 			if(fs.existsSync(dir+file)){
-				jsStr += fs.readFileSync(dir+file).toString()+"\n";
+				code = fs.readFileSync(dir+file).toString()+"\n";
 			} else {
-				jsStr += `// ${file} Not Found\n`;
+				code = `// ${file} Not Found\n`;
 			}
+			jsStr = jsStr.replace(i[0],code);
 		}
 
 		return jsStr;
